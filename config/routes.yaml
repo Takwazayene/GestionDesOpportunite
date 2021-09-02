@@ -1,0 +1,29 @@
+index:
+  path: /
+  controller: App\Controller\OppController::index
+
+add:
+  path: /add
+  controller: App\Controller\OppController::add
+
+create:
+  path: /create
+  controller: App\Controller\OpportuniteController::createOpp
+
+new2:
+  path: /new2
+  controller: App\Controller\OppController::new2
+
+list:
+  path: /list
+  controller: App\Controller\OpportuniteController::list
+  methods:  [GET, POST]
+
+pdf:
+  path: /{id}/pdf
+  controller: App\Controller\OpportuniteController::pdf
+  methods:  [GET, POST]
+
+stat:
+  path: /stat
+  controller: App\Controller\OpportuniteController::stat

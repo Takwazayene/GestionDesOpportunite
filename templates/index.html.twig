@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <h1>Demande Inscription</h1>
+
+    {{ form_start(form) }}
+<div class="row">
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+        {% if app.user %}
+            {{ form_widget(form.nomp,{ 'attr': {'class': 'form-control', 'required'   : 'true','hidden':'true' } }) }}
+
+                {{ form_widget(form.prenomp,{ 'attr': {'class': 'form-control', 'required'   : 'true','hidden':'true' } }) }}
+
+                {{ form_widget(form.nump,{ 'attr': {'class': 'form-control',    'required'   : 'true','hidden':'true'
+                } }) }}
+                {{ form_widget(form.address,{ 'attr': {'class': 'form-control' ,'required'   : 'true','hidden':'true'} }) }}
+        {{ form_widget(form.cin,{ 'attr': {'class': 'form-control','required'   : 'true','hidden':'true'} }) }}
+
+                {{ form_widget(form.mail,{ 'attr': {'class': 'form-control','required'   : 'true','hidden':'true' }} ) }}
+        {% else %}
+            <label class="bmd-label-floating">Nom Parent </label>
+            {{ form_widget(form.nomp,{ 'attr': {'class': 'form-control', 'required'   : 'true'} }) }}
+        </div>
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+
+        <label class="bmd-label-floating">Prenom Parent </label>
+        {{ form_widget(form.prenomp,{ 'attr': {'class': 'form-control', 'required'   : 'true'} }) }}
+    </div>
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+
+        <label class="bmd-label-floating">Numero Parent </label>
+        {{ form_widget(form.nump,{ 'attr': {'class': 'form-control',    'required'   : 'true'
+        } }) }}
+    </div>
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+
+        <label class="bmd-label-floating">Address Parent </label>
+        {{ form_widget(form.address,{ 'attr': {'class': 'form-control' ,'required'   : 'true'} }) }}
+    </div>
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+
+        <label class="bmd-label-floating">Email Parent </label>
+        {{ form_widget(form.mail,{ 'attr': {'class': 'form-control','required'   : 'true'} }) }}
+    </div>
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+        <div class="form-group col-lg-6 col-md-12 col-sm-12">
+
+            <label class="bmd-label-floating">Cin </label>
+            {{ form_widget(form.cin,{ 'attr': {'class': 'form-control','min':"8", 'max':"8",'required'   : 'true'} }) }}
+        </div>
+        {% endif %}
+
+        <label class="bmd-label-floating">Nom Enfant </label>
+        {{ form_widget(form.nome,{ 'attr': {'class': 'form-control','required'   : 'true'} }) }}
+    </div>
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+
+        <label class="bmd-label-floating">Prenom Enfant </label>
+        {{ form_widget(form.prenome,{ 'attr': {'class': 'form-control','required'   : 'true'} }) }}
+    </div>
+    <div class="form-group col-lg-6 col-md-12 col-sm-12">
+
+        <label class="bmd-label-floating">Age Enfant </label>
+        {{ form_widget(form.age,{ 'attr': {'class': 'form-control', 'min':"2", 'max':"5",'required'   : 'true'} }) }}
+    </div>
+
+    </div>
+
+    <input type="submit" value="Create" />    {{ form_end(form) }}
+
+
+{% endblock %}
